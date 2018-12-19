@@ -1,5 +1,5 @@
 {
-  "name": "webpack-demo",
+  "name": "webpack-learning-demo",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,11 +8,16 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shie",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^2.0.1",
+    "csv-loader": "^3.0.2",
+    "file-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "xml-loader": "^1.2.1"
   },
   "dependencies": {
     "lodash": "^4.17.11"
