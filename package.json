@@ -1,5 +1,9 @@
 {
   "name": "webpack-learning-demo",
+  "sideEffects": [
+    "./src/some-side-effectful-file.js",
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "",
   "private": true,
