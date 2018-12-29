@@ -9,11 +9,13 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "testconfigdev": "webpack-dev-server --open --config webpack.test.config.js",
+    "testconfigprod": "NODE_ENV='production' webpack -p --config webpack.test.config.js",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "start": "NODE_ENV='development' webpack-dev-server --open --config webpack.dev.js",
+    "build": "NODE_ENV='production' webpack --config webpack.prod.js",
     "server": "node server.js",
-    "nodeapi": "node node-api-dev-server.js",
-    "build": "webpack"
+    "nodeapi": "node node-api-dev-server.js"
   },
   "keywords": [],
   "author": "Shie",
@@ -26,11 +28,13 @@
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-dev-server": "^3.1.13",
     "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.1.5",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
