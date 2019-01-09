@@ -1,3 +1,11 @@
+/*
+ * @Description: 入口主文件
+ * @Author: Shie
+ * @Date: 2018-12-19
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:31:32
+ */
+
 import _ from 'lodash';
 import printMe from './print.js';
 import { cube } from './math.js';

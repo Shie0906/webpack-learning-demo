@@ -1,3 +1,11 @@
+/*
+ * @Description: 通过 Node.js API 使用 webpack dev server 小例子
+ * @Author: Shie
+ * @Date: 2018-12-27
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:32:40
+ */
+
 const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 

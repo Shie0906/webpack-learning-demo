@@ -1,3 +1,11 @@
+/*
+ * @Description: 开发环境 webpack 配置
+ * @Author: Shie
+ * @Date: 2018-12-29
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:33:12
+ */
+
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js')
 const webpack = require('webpack');

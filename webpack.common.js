@@ -1,3 +1,11 @@
+/*
+ * @Description: 开发环境和生产环境公共的 webpack 配置
+ * @Author: Shie
+ * @Date: 2018-12-29
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:33:06
+ */
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');

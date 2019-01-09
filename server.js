@@ -1,3 +1,11 @@
+/*
+ * @Description: 使用 webpack-dev-middleware 自定义开发服务，结合 webpack-hot-middleware 实现模块热替换
+ * @Author: Shie
+ * @Date: 2018-12-24
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:32:49
+ */
+
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');

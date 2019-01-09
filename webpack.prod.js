@@ -1,3 +1,11 @@
+/*
+ * @Description: 生产环境 webpack 配置
+ * @Author: Shie
+ * @Date: 2018-12-29
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:33:16
+ */
+
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');

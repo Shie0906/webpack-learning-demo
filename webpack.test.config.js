@@ -1,3 +1,11 @@
+/*
+ * @Description: 一个配置文件测试开发和生产两种环境 webpack 配置
+ * @Author: Shie
+ * @Date: 2018-12-29
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:33:21
+ */
+
 const webpack = require('webpack'),
   path = require('path'),
   fs = require('fs');

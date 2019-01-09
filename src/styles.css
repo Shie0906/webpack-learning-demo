@@ -1,3 +1,11 @@
+/*
+ * @Description: 入口主文件引入的 css 文件，可配合模块热替换功能
+ * @Author: Shie
+ * @Date: 2018-12-27
+ * @Last Modified by: Shie
+ * @Last Modified time: 2019-01-09 19:32:15
+ */
+
 body {
   background: red;
 }
