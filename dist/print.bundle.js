@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{72:function(e,o,n){"use strict";function t(){console.log('button Clicked: Here\'s "some text"!')}n.r(o),n.d(o,"default",function(){return t}),console.log("The print.js moudule has loaded! See the network tab in dev tools...")}}]);
-//# sourceMappingURL=print.bundle.js.map

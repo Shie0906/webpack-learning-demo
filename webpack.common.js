@@ -3,10 +3,11 @@
  * @Author: Shie
  * @Date: 2018-12-29
  * @Last Modified by: Shie
- * @Last Modified time: 2019-01-11 11:32:39
+ * @Last Modified time: 2019-01-11 15:38:53
  */
 
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -30,17 +31,25 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: '生产环境构建'
-    })
+      title: '缓存'
+    }),
+    new webpack.HashedModuleIdsPlugin(),
   ],
   output: {
-    filename: process.env.NODE_ENV === 'production' ? '[name].[hash].js' : '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: process.env.NODE_ENV === 'production' ? '[name].[chunkhash].js' : '[name].bundle.js',
+    chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // }
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
 };

@@ -3,7 +3,7 @@
  * @Author: Shie
  * @Date: 2018-12-19
  * @Last Modified by: Shie
- * @Last Modified time: 2019-01-11 11:43:10
+ * @Last Modified time: 2019-01-11 15:39:26
  */
 
 // import() 调用会在内部用到 promise。如果有在旧版本浏览器中使用 import()，记得使用一个 polyfill 库（例如 es6-promise 或 promise-polyfill），来 shim Promise。
@@ -11,7 +11,7 @@ import "core-js/modules/es6.promise";
 import "core-js/modules/es6.array.iterator";
 
 import _ from 'lodash';
-import printMe from './print.js';
+// import printMe from './print.js';
 import { cube } from './math.js';
 import './styles.css';
 
@@ -35,6 +35,7 @@ function component() {
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
   btn.innerHTML = 'Click me and look at the console!';
+  // btn.onclick = printMe;
 
   preElement.innerHTML = '5 cubed is equal to ' + cube(5);
 
@@ -42,6 +43,7 @@ function component() {
   element.appendChild(btn);
   element.appendChild(preElement);
 
+  // import() 实现懒加载
   btn.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
     const print = module.default;
     print();
