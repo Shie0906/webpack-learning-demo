@@ -3,17 +3,19 @@
  * @Author: Shie
  * @Date: 2018-12-19
  * @Last Modified by: Shie
- * @Last Modified time: 2019-01-11 15:39:26
+ * @Last Modified time: 2019-01-14 15:02:57
  */
 
-// import() 调用会在内部用到 promise。如果有在旧版本浏览器中使用 import()，记得使用一个 polyfill 库（例如 es6-promise 或 promise-polyfill），来 shim Promise。
-import "core-js/modules/es6.promise";
-import "core-js/modules/es6.array.iterator";
-
-import _ from 'lodash';
-// import printMe from './print.js';
+// import _ from 'lodash';
+import printMe from './print.js';
 import { cube } from './math.js';
+import { file, parse } from './globals.js';
 import './styles.css';
+// const printMe = require('./print.js');
+// const cube = require('./math.js').cube;
+// const file = require('./globals.js').file;
+// const parse = require('./globals.js').parse;
+// require('./styles.css');
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
@@ -32,7 +34,13 @@ function component() {
   var preElement = document.createElement('pre');
 
   // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = join(['Hello', 'webpack'], ' ');
+
+  // // Assume we are in the context of `window`
+  // this.alert('Hmmm, this probably isn\'t a great idea...');
+
+  console.log('globals file and parse: ', file, parse)
 
   btn.innerHTML = 'Click me and look at the console!';
   // btn.onclick = printMe;
@@ -54,6 +62,14 @@ function component() {
 
 var element = component(); // 当 print.js 改变导致页面重新渲染时，重新获取渲染的元素
 document.body.appendChild(element);
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(json => {
+    console.log('We retrieved some data! AND we\'re confident it will work on a variety of browser distributions.');
+    console.log(json);
+  })
+  .catch(error => console.error('Something went wrong when fetching this data: ', error));
 
 /**
  * 动态导入 lodash

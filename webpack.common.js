@@ -3,7 +3,7 @@
  * @Author: Shie
  * @Date: 2018-12-29
  * @Last Modified by: Shie
- * @Last Modified time: 2019-01-11 15:38:53
+ * @Last Modified time: 2019-01-14 14:55:03
  */
 
 const path = require('path');
@@ -13,27 +13,39 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
+    polyfills: './src/polyfills.js',
     app: './src/index.js',
     // another: './src/another-modules.js'
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.js$/,
         use: 'babel-loader'
+      },
+      // {
+      //   test: require.resolve('./src/index.js'),
+      //   use: 'imports-loader?this=>window'
+      // },
+      {
+        test: require.resolve('./src/globals.js'),
+        use: 'exports-loader?file,parse=helpers.parse'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: '缓存'
+      title: 'shimming'
     }),
     new webpack.HashedModuleIdsPlugin(),
+    new webpack.ProvidePlugin({
+      join: ['lodash', 'join']
+    }),
   ],
   output: {
     filename: process.env.NODE_ENV === 'production' ? '[name].[chunkhash].js' : '[name].bundle.js',
