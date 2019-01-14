@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{9:function(e,o,n){"use strict";function t(){console.log('button Clicked: Here\'s "some text"!')}n.r(o),n.d(o,"default",function(){return t}),console.log("The print.js moudule has loaded! See the network tab in dev tools...")}}]);

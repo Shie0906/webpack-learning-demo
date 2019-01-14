@@ -3,13 +3,13 @@
  * @Author: Shie
  * @Date: 2018-12-19
  * @Last Modified by: Shie
- * @Last Modified time: 2019-01-14 15:02:57
+ * @Last Modified time: 2019-01-14 15:56:42
  */
 
-// import _ from 'lodash';
+import _ from 'lodash';
 import printMe from './print.js';
 import { cube } from './math.js';
-import { file, parse } from './globals.js';
+// import { file, parse } from './globals.js';
 import './styles.css';
 // const printMe = require('./print.js');
 // const cube = require('./math.js').cube;
@@ -34,13 +34,13 @@ function component() {
   var preElement = document.createElement('pre');
 
   // Lodash, now imported by this script
-  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.innerHTML = join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  // element.innerHTML = join(['Hello', 'webpack'], ' ');
 
   // // Assume we are in the context of `window`
   // this.alert('Hmmm, this probably isn\'t a great idea...');
 
-  console.log('globals file and parse: ', file, parse)
+  // console.log('globals file and parse: ', file, parse)
 
   btn.innerHTML = 'Click me and look at the console!';
   // btn.onclick = printMe;
